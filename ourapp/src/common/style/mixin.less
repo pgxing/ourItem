@@ -1,0 +1,36 @@
+@import './variable.less';
+.w(@px){
+    /*
+        10rem == 375px -> rem == 37.5px
+        @remSize = 37.5px
+        即remSize == rem
+        1(px) == 1/37.5(rem)
+        40(px) == 40/37.5(rem) == 40/@remSize(rem)
+    */ 
+    width: unit(@px/@remSize,rem)
+}
+.h(@px){
+    height: unit(@px/@remSize,rem)
+    
+}
+.l_h(@px){
+    line-height: unit(@px/@remSize,rem)
+}
+.f_s(@px){
+    font-size: unit(@px/@remSize,rem)
+}
+.top(@px){
+    top:unit(@px/@remSize,rem)
+}
+.padding(@top,@right,@bottom,@left){
+    padding-top:unit(@top/@remSize,rem); 
+    padding-right:unit(@right/@remSize,rem);
+    padding-bottom:unit(@bottom/@remSize,rem); 
+    padding-left:unit(@left/@remSize,rem)
+}
+.margin(@top,@right,@bottom,@left){
+    margin-top:unit(@top/@remSize,rem); 
+    margin-right:unit(@right/@remSize,rem);
+    margin-bottom:unit(@bottom/@remSize,rem); 
+    margin-left:unit(@left/@remSize,rem)
+}
