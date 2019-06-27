@@ -1,15 +1,15 @@
 <template>
      <ul class='m-nav'>
-      <router-link active-class='sel' tag='li' to='/recommend'>
+      <router-link active-class='sel' tag='li' to='/home'>
         <span>首页</span>
       </router-link>
-      <router-link active-class='sel' tag='li' to='/singer'>
+      <router-link active-class='sel' tag='li' to='/search'>
        <span>分类搜索</span>
       </router-link>
-      <router-link active-class='sel' tag='li' to='/rank'>
+      <router-link active-class='sel' tag='li' to='/car'>
         <span>购物车</span>
       </router-link>
-      <router-link active-class='sel' tag='li' to='/search'>
+      <router-link active-class='sel' tag='li' to='/my'>
         <span>我的</span>
       </router-link>      
   </ul>
