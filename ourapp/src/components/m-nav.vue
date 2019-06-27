@@ -43,7 +43,6 @@ export default {
         }
         .sel{
             color: yellow;
-            
         }
 }
    

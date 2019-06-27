@@ -1,6 +1,6 @@
 <template>
     <section class = 'm-head'>
-        这是头
+        知花知果
     </section>
 </template>
 
