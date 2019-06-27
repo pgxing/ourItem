@@ -6,7 +6,7 @@ Vue.use(Router)
 import Home from 'pages/home'
 import Car from 'pages/car'
 import My from 'pages/my'
-import Serch from 'pages/serch'
+import Search from 'pages/search'
 
 export default new Router({
   routes: [
@@ -23,8 +23,8 @@ export default new Router({
         component:My
       },
       {
-        path:'/serch',
-        component:Serch
+        path:'/search',
+        component:Search
       }
 
   ]
