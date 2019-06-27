@@ -11,16 +11,15 @@
 <script>
 export default {
   data(){
-    return{
-      banners:[]
-    }
+      return{
+          banners:[
+          '/banner-img/1.jpg',
+          '/banner-img/2.jpg'
+      ]
+      }
   },
-  props:['list'],
-  watch:{
-    list(newValue,oldValue){
-      this.banners=newValue
-    }
-  }
+  
+  
 }
 </script>
 <style lang="less" scope>
