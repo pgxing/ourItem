@@ -76,7 +76,7 @@ export default {
       color: #333;
     }
   }
-  .rightDiv {
+  .rightDiv{
     display:flex;
     span {
       display: block;
