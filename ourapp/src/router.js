@@ -8,6 +8,9 @@ import Car from 'pages/car'
 import My from 'pages/my'
 import Search from 'pages/search'
 
+
+import Mid from 'components/mid-con.vue'
+
   //home页面插件路由
   // import Recommend from 'components/recommend.vue'
   // import Place from 'components/place.vue'
@@ -25,7 +28,12 @@ export default new Router({
       {
         path:'/home',
         component:Home,
-        
+        children:[
+          {
+            path:'/mid/:id',
+            component:Mid
+          }
+        ]
       },
       {
         path:'/car',
