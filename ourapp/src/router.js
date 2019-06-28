@@ -7,6 +7,7 @@ import Home from 'pages/home'
 import Car from 'pages/car'
 import My from 'pages/my'
 import Search from 'pages/search'
+import Info from 'pages/info'
 
   //home页面插件路由
   // import Recommend from 'components/recommend.vue'
@@ -33,7 +34,18 @@ export default new Router({
       },
       {
         path:'/search',
-        component:Search
+        component:Search,
+        children:[
+          
+          {
+            path:'info/:id',
+            component:Info
+          },
+          {
+            path:'/',
+            redirect:'info/0'
+          }
+        ]
       }
 
   ]
