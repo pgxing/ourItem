@@ -6,7 +6,7 @@
       </div>
       <div class="rightDiv">
         <span>清理失效商品</span>
-        <span @click='change' ref='name'>编辑</span>
+        <span @click="change" ref="name">编辑</span>
       </div>
     </div>
     <div class="car-foot">
@@ -18,22 +18,215 @@
         <button>未选购</button>
       </div>
     </div>
+    <div class='carList'>
+    <ul class="shopList">
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    </div>
   </div>
 </template>
 <script>
+
+import Bs from "better-scroll";
+console.log(Bs)
 export default {
-    methods: {
-        change(){
-            console.log(this)
-        }
-    },
+  methods: {
+    change() {
+      this.$refs.name.innerText = "完成";
+    }
+  },
+  mounted() {
+    new Bs('.carList')
+    // console.log(this)
+  },
+  
 };
 </script>
 <style lang="less" scoped>
 @import "~style/index.less";
-// .car{
+// .carList{
 //     position:fixed;
-//     .top
+//     .top(44);
+//     .bottom(0);
 // }
 .car-top {
   // position:fixed;
@@ -62,13 +255,14 @@ export default {
 }
 .car-foot {
   position: fixed;
+  z-index:1;
   .bottom(44);
   .h(50);
   .w(375);
   background: @bg-color-white;
   .f_s(14);
   justify-content: space-between;
-  display:flex;
+  display: flex;
   .leftDiv {
     span {
       display: block;
@@ -76,8 +270,8 @@ export default {
       color: #333;
     }
   }
-  .rightDiv{
-    display:flex;
+  .rightDiv {
+    display: flex;
     span {
       display: block;
       .margin(15, 30, 15, 30);
@@ -87,6 +281,62 @@ export default {
       .h(50);
       .w(105);
       background: #ccc;
+    }
+  }
+}
+
+.carList {
+  position: fixed;
+  .top(88);
+  .bottom(94);
+  overflow:hidden;
+  .list {
+    background: #fff;
+    display: flex;
+    // justify-content:space-between;
+    .h(97);
+    .w(375);
+    .describe {
+      .w(248);
+      .price {
+        .margin(0, 0, 0, 13);
+        display: flex;
+        justify-content: space-between;
+        color: red;
+        .h(28);
+        .l_h(28);
+        // .btn{
+
+        // }
+        button {
+          // .l_h(28);
+          .w(25);
+          .h(25);
+          background: #fff;
+          border: 1px solid #ccc;
+          border-radius: 25px;
+          .margin(10,20,0,10);
+          
+          
+        }
+      }
+      .dec {
+        .margin(18, 50, 0, 16);
+        span {
+          color: #333;
+          .f_s(12);
+          display: block;
+          .h(20);
+          .l_h(20);
+        }
+      }
+    }
+    .img {
+      .margin(13, 0, 13, 50);
+      img {
+        .h(77);
+        .w(77);
+      }
     }
   }
 }
