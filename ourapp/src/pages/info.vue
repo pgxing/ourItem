@@ -2,11 +2,13 @@
   <div class="swiper">
     <ul class="info">
       <li v-for="(item,index) in foodinfo" :key="index" class="alli">
-        <img :src="item.src" alt>
+        <img v-lazy="item.src"
+            @click="todetail"
+        >
         <h3>{{item.titie}}</h3>
         <div>
           <span class="price">{{item.price}}</span>
-          <span class="tocar">加购物车</span>
+          <span class="tocar" @click="addcar(item)">加购物车</span>
         </div>
       </li>
     </ul>
@@ -18,7 +20,8 @@ export default {
   data() {
     return {
       list: [],
-      foodinfo: []
+      foodinfo: [],
+      carlist :[]
     };
   },
   methods: {
@@ -31,7 +34,42 @@ export default {
         });
     },
     initBS() {
-      this.scroll = new BS(".swiper", { probeType: 3 });
+      this.scroll = new BS(".swiper", { click: true, probeType: 3 });
+    },
+    addcar(item) {
+      let flag = true;
+      if(!item.id){
+          item.id = 1;
+        //   this.carlist.push(item)
+      }
+      if (this.carlist.length == 0) {
+        this.carlist.push(item);
+      } else {
+        for (var i = 0; i < this.carlist.length; i++) {
+          if (this.carlist[i].src == item.src) {
+              console.log(this.carlist[i].src)
+              this.carlist[i].id++;
+              flag = false;
+              break;
+          }
+        }
+        if(flag){
+            this.carlist.push(item)
+        }
+      }
+      //存进localstorage
+      localStorage.setItem('info',JSON.stringify(this.carlist))
+      console.log(JSON.parse(localStorage.getItem('info')))
+      // this.carlist.forEach(function(value,index){
+      //     if(value == item){
+
+      //     }
+      // })
+      // console.log(this.carlist)
+    },
+    todetail(){
+        console.log(this.$store.state.Detail.show)
+        this.$store.state.Detail.show = true;
     }
   },
   watch: {
@@ -43,23 +81,23 @@ export default {
   mounted() {
     this.initData();
     this.initBS();
+    // this.carlist = [];
   }
 };
 </script>
 <style lang="less" scoped>
 @import "~style/index.less";
-.swiper{
-    height: 100%;
-    overflow: hidden;
+.swiper {
+  // height: 100%;
+  .h(524);
+  overflow: hidden;
 }
 .info {
   .w(285);
-  background: skyblue;
   float: left;
   .alli {
     .w(285);
     .h(225);
-    background: slateblue;
     .padding(12, 0, 0, 15);
     img {
       .w(258);
@@ -68,14 +106,12 @@ export default {
     h3 {
       .w(258);
       .h(43);
-      background: yellow;
       .l_h(43);
       .padding(0, 0, 0, 10);
     }
     div {
       .w(258);
       .h(40);
-      background: green;
       display: flex;
       justify-content: space-between;
       .padding(7, 0, 0, 0);
