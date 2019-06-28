@@ -36,15 +36,12 @@ export default new Router({
       {
         path:'/home',
         component:Home,
-<<<<<<< HEAD
         children:[
           {
             path:'/mid/:id',
             component:Mid
           }
         ]
-=======
->>>>>>> be826e46067cb3ad5fea60ac2e45d5efe2c6c7de
       },
       {
         path:'/car',
