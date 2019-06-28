@@ -7,6 +7,9 @@ import Home from 'pages/home'
 import Car from 'pages/car'
 import My from 'pages/my'
 import Search from 'pages/search'
+import Tosearch from 'pages/search/tosearch'
+
+
 import Info from 'pages/info'
 import WaitingPay from 'pages/My/waitingPay'
 import AlreadyPay from 'pages/My/alreadyPay'
@@ -80,11 +83,15 @@ export default new Router({
           
           {
             path:'info/:id',
-            component:Info
+            components:{Info}
           },
           {
             path:'/',
             redirect:'info/0'
+          },
+          {
+            path:'tosearch',
+            components:{Tosearch}
           }
         ]
       }

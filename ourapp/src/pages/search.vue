@@ -1,8 +1,11 @@
 <template>
     <div class="serch">
         <header>
-            <div class="serInp">♥ 搜索</div>
+            <div class="serInp"
+                @click="tosearch"
+            >♥ 搜索</div>
         </header>
+        <!-- <router-view name="Tosearch"></router-view> -->
         <ul class="aside">
             <li v-for="(item,index) in info"
                 :key="index"
@@ -10,7 +13,8 @@
                 :class="index == state ? 'green' : ''"
             ><span>{{item.title}}</span></li>
         </ul>
-        <router-view></router-view>
+        <router-view name="Tosearch"></router-view>
+        <router-view name="Info"></router-view>
     </div>
 </template>
 <script>
@@ -36,6 +40,9 @@ export default {
             //显示商品列表
             
             this.$router.push({path:`/search/info/${index}`})
+        },
+        tosearch(){
+            this.$router.push({path:'/search/tosearch'})
         }
     },
     mounted(){
@@ -49,7 +56,7 @@ export default {
     
     height: 100%;
     .w(375);
-    background: orange;
+    background: #fff;
     header{
         .h(55);
         .w(375);
