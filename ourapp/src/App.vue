@@ -5,16 +5,18 @@
     <router-view/>
 
     <MNav></MNav>
-    
+    <Detail></Detail>
   </div>
 </template>
 <script>
 import MHead from './components/m-head'
 import MNav from './components/m-nav'
+import Detail from './pages/detail'
 export default {
   components:{
     MHead,
-    MNav
+    MNav,
+    Detail
   }
 }
 </script>
