@@ -1,4 +1,5 @@
 <template>
+
 <div class='m-banner'>
   <mt-swipe :auto="4000">
     <mt-swipe-item v-for='(item,index) in banners' :key='index'>
@@ -16,7 +17,7 @@ export default {
           '/banner-img/1.jpg',
           '/banner-img/2.jpg'
       ]
-      }
+      } 
   },
   
   
@@ -25,8 +26,9 @@ export default {
 <style lang="less" scope>
 @import '~style/index.less';
 .m-banner{
+    
   .w(375);
-  .h(150);
+  .h(95);
   img{
     width: 100%;
   }
