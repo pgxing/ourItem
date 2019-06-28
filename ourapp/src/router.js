@@ -7,6 +7,10 @@ import Home from 'pages/home'
 import Car from 'pages/car'
 import My from 'pages/my'
 import Search from 'pages/search'
+import Tosearch from 'pages/search/tosearch'
+
+
+import Info from 'pages/info'
 import WaitingPay from 'pages/My/waitingPay'
 import AlreadyPay from 'pages/My/alreadyPay'
 import WaitingGet from 'pages/My/waitingGet'
@@ -15,6 +19,9 @@ import MyTeam from 'pages/My/myTeam'
 import Addressee from 'pages/My/addressee'
 import Commander from 'pages/My/commander'
 import ClearCache from 'pages/My/clearCache'
+
+
+import Mid from 'components/mid-con.vue'
 
   //home页面插件路由
   // import Recommend from 'components/recommend.vue'
@@ -29,6 +36,12 @@ export default new Router({
       {
         path:'/home',
         component:Home,
+        children:[
+          {
+            path:'/mid/:id',
+            component:Mid
+          }
+        ]
       },
       {
         path:'/car',
@@ -74,7 +87,22 @@ export default new Router({
       },
       {
         path:'/search',
-        component:Search
+        component:Search,
+        children:[
+          
+          {
+            path:'info/:id',
+            components:{Info}
+          },
+          {
+            path:'/',
+            redirect:'info/0'
+          },
+          {
+            path:'tosearch',
+            components:{Tosearch}
+          }
+        ]
       }
 
   ]
