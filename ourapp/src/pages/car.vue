@@ -68,7 +68,7 @@ export default {
   background: @bg-color-white;
   .f_s(14);
   justify-content: space-between;
-  display: flex;
+  display:flex;
   .leftDiv {
     span {
       display: block;
@@ -77,7 +77,7 @@ export default {
     }
   }
   .rightDiv {
-    display: flex;
+    display:flex;
     span {
       display: block;
       .margin(15, 30, 15, 30);
