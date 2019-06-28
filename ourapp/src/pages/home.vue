@@ -59,6 +59,10 @@ export default {
     },
     mounted(){
         this.initData();
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 977606f0297173ba91c42c6b72b1ff71522b4625
         setTimeout(() => {
             this.initBS();
         }, 20)
