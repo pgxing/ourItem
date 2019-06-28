@@ -3,7 +3,7 @@
       <router-link active-class='sel' tag='li' to='/home'>
         <span>首页</span>
       </router-link>
-      <router-link active-class='sel' tag='li' to='/serch'>
+      <router-link active-class='sel' tag='li' to='/search'>
        <span>分类搜索</span>
       </router-link>
       <router-link active-class='sel' tag='li' to='/car'>
