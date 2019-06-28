@@ -1,8 +1,10 @@
 <template>
     <section class = 'home'>
         <ul class = 'nav'>
-            <li v-for='(item,index) in info' :key='index' >
+            <li v-for='(item,index) in info' 
+                :key='index' >
                 {{item.title}}
+                
             </li>
         </ul>
         <div class = 'test'>
