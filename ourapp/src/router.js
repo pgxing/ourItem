@@ -33,11 +33,7 @@ export default new Router({
       },
       {
         path:'/search',
-<<<<<<< HEAD
-        component:Serch
-=======
         component:Search
->>>>>>> a5d2cadfd8358b319fa7905f87ab6042eee4f5c3
       }
 
   ]
