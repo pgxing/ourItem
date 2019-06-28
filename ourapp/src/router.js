@@ -35,6 +35,7 @@ export default new Router({
         path:'/search',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         component:Serch
 =======
         component:Search
@@ -42,6 +43,9 @@ export default new Router({
 =======
         component:Search
 >>>>>>> dev
+=======
+        component:Search
+>>>>>>> bc0bf24379dba2335edcf128bfe0d6a279c24bb9
       }
 
   ]

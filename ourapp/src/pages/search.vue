@@ -1,5 +1,5 @@
 <template>
-    <div class="search">
+    <div class="serch">
         <header>
             <div class="serInp">♥ 搜索</div>
         </header>
