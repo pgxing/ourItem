@@ -315,9 +315,7 @@ export default {
           background: #fff;
           border: 1px solid #ccc;
           border-radius: 25px;
-          .margin(10,20,0,10);
-          
-          
+          .margin(10,20,0,10);  
         }
       }
       .dec {
