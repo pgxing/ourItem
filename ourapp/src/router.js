@@ -19,6 +19,10 @@ import Search from 'pages/search'
 export default new Router({
   routes: [
       {
+        path:'/',
+        redirect:'/home'
+      },
+      {
         path:'/home',
         component:Home,
         
