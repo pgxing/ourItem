@@ -46,9 +46,196 @@
         <button>未选购</button>
       </div>
     </div>
+    <div class='carList'>
+    <ul class="shopList">
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list">
+        <div class="img">
+          <img src="../assets/1_03.png" alt>
+        </div>
+        <div class="describe">
+          <div class="dec">
+            <span>【新人专享】水果试吃装 1份</span>
+            <span>规格 1份</span>
+          </div>
+          <div class="price">
+            <div>
+              <h1>￥</h1>
+            </div>
+            <div class="btn">
+              <button class="jian">-</button>
+              <button class="add">+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    </div>
   </div>
 </template>
 <script>
+
+import Bs from "better-scroll";
+console.log(Bs)
 export default {
   data() {
     return {
@@ -186,6 +373,7 @@ input, button{
 
 .car-foot {
   position: fixed;
+  z-index:1;
   .bottom(44);
   .h(50);
   .w(375);
@@ -211,6 +399,60 @@ input, button{
       .h(50);
       .w(105);
       background: #ccc;
+    }
+  }
+}
+
+.carList {
+  position: fixed;
+  .top(88);
+  .bottom(94);
+  overflow:hidden;
+  .list {
+    background: #fff;
+    display: flex;
+    // justify-content:space-between;
+    .h(97);
+    .w(375);
+    .describe {
+      .w(248);
+      .price {
+        .margin(0, 0, 0, 13);
+        display: flex;
+        justify-content: space-between;
+        color: red;
+        .h(28);
+        .l_h(28);
+        // .btn{
+
+        // }
+        button {
+          // .l_h(28);
+          .w(25);
+          .h(25);
+          background: #fff;
+          border: 1px solid #ccc;
+          border-radius: 25px;
+          .margin(10,20,0,10);  
+        }
+      }
+      .dec {
+        .margin(18, 50, 0, 16);
+        span {
+          color: #333;
+          .f_s(12);
+          display: block;
+          .h(20);
+          .l_h(20);
+        }
+      }
+    }
+    .img {
+      .margin(13, 0, 13, 50);
+      img {
+        .h(77);
+        .w(77);
+      }
     }
   }
 }

@@ -13,8 +13,9 @@
         <section class = 'line'>
             <div class = 'test'>
                 <MBanner></MBanner>
+                <router-view></router-view>
             </div>
-            <router-view></router-view>
+            
         </section>
         
     </section>
@@ -37,6 +38,7 @@ export default {
        MBanner,
        Mid
    },
+   
    methods:{
         initData(){
             this.$axios.get('https://www.easy-mock.com/mock/5d14b08fea4d3e1eb5fb9725/shuju')
@@ -50,35 +52,46 @@ export default {
             
             this.num = index;
             this.$router.push({path: `/mid/${this.info[index].title}`, query: {id:index}})
+        },
+        initBS() {
+            this.scroll = new BS(".line", { probeType: 3 });
         }
     },
     mounted(){
         this.initData();
-        new BS('.line')
+        setTimeout(() => {
+            this.initBS();
+        }, 20)
     }
-
-   
 }
 </script>
 
-<style lang = 'less' scope>
+<style lang = 'less' scoped>
     @import '../common/style/index.less';
     
     .home{
         width:100%;
-        
+        height:100%;
        position:relative;
-        
+        background:#fff;
     }
     .line{
         position: fixed;
-        .top(88);
+        .top(95);
+        /* .h(525); */
+        height:100%;
+        /* .padding(95,0,44,0); */
+        .f_s(16);
+        .w(375);
         bottom: 0px;
         overflow: hidden;
         .test{
-           
+            position:absolute;
+            top:0;
+            z-index: 10;
+            bottom:0;
             .w(375);
-            background: greenyellow;
+            .h(5250);
         }
         .content{
             .w(375);

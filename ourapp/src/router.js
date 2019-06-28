@@ -35,6 +35,7 @@ export default new Router({
   routes: [
       {
         path:'/home',
+        // redirect:'/home',
         component:Home,
         children:[
           {
