@@ -20,6 +20,9 @@ import Addressee from 'pages/My/addressee'
 import Commander from 'pages/My/commander'
 import ClearCache from 'pages/My/clearCache'
 
+
+import Mid from 'components/mid-con.vue'
+
   //home页面插件路由
   // import Recommend from 'components/recommend.vue'
   // import Place from 'components/place.vue'
@@ -33,6 +36,15 @@ export default new Router({
       {
         path:'/home',
         component:Home,
+<<<<<<< HEAD
+        children:[
+          {
+            path:'/mid/:id',
+            component:Mid
+          }
+        ]
+=======
+>>>>>>> be826e46067cb3ad5fea60ac2e45d5efe2c6c7de
       },
       {
         path:'/car',

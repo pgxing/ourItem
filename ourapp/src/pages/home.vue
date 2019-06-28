@@ -1,47 +1,60 @@
 <template>
     <section class = 'home'>
         <ul class = 'nav'>
-            <li 
+            <li @click='choose(index)'
+                :class="index == num ? 'active' : ''"
                 v-for='(item,index) in info' 
                 :key='index' >
-                {{item.title}}
-                @click='chose(index)'
+
+               {{item.title}}
+                
             </li>
         </ul>
-        <div class = 'test'>
-            <MBanner></MBanner>
-        </div>
+        <section class = 'line'>
+            <div class = 'test'>
+                <MBanner></MBanner>
+            </div>
+            <router-view></router-view>
+        </section>
+        
     </section>
 </template>
 
 <script>
 
 import MBanner from '../components/m-banner.vue'
-
+import Mid from '../components/mid-con.vue'
+import BS from 'better-scroll'
 
 export default {
     data(){
         return{
-            info:[]
+            info:[],
+            num : 0
         }
     },
-    
    components:{
-       MBanner
+       MBanner,
+       Mid
    },
    methods:{
         initData(){
             this.$axios.get('https://www.easy-mock.com/mock/5d14b08fea4d3e1eb5fb9725/shuju')
             .then((res) => {
-                // let list = res.list;
-                // this.singerDate(list)
-                console.log(res)
+                
+               
                 this.info = res.data.info
             })
+        },
+        choose(index){
+            
+            this.num = index;
+            this.$router.push({path: `/mid/${this.info[index].title}`, query: {id:index}})
         }
     },
     mounted(){
         this.initData();
+        new BS('.line')
     }
 
    
@@ -50,14 +63,25 @@ export default {
 
 <style lang = 'less' scope>
     @import '../common/style/index.less';
-    *{box-sizing:border-box;}
+    
     .home{
         width:100%;
-       
+        
+       position:relative;
+        
+    }
+    .line{
+        position: fixed;
+        .top(88);
+        bottom: 0px;
+        overflow: hidden;
         .test{
-            height:2000px;
-            width:100%;
-            background:pink;
+           
+            .w(375);
+            background: greenyellow;
+        }
+        .content{
+            .w(375);
         }
     }
     .nav{
@@ -83,8 +107,14 @@ export default {
         }
         
     }
+    .active{
+        .f_s(30);
+        color: #000;
+        font-weight:bolder;
+        background: #fff;
+    }
 
-
+    
 </style>
 
 
