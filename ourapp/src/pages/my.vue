@@ -38,19 +38,19 @@
               <span>全部订单></span>
           </div>
           <div class="middle_1cb">
-              <div>
+              <div @click="jump1()">
                   <section>icon</section>
                   <p>待付款</p>
               </div>
-              <div>
+              <div @click="jump2()">
                   <section>icon</section>
                   <p>已付款</p>
               </div>
-              <div>
+              <div @click="jump3()">
                   <section>icon</section>
                   <p>待发货</p>
               </div>
-              <div>
+              <div @click="jump4()">
                   <section>icon</section>
                   <p>待收货</p>
               </div>
@@ -61,19 +61,19 @@
     <div class="middle_2">
         <h3>其他服务</h3>
         <div class="middle_2c">
-              <div>
+              <div @click="go1()">
                   <section>icon</section>
                   <p>我的团长</p>
               </div>
-              <div>
+              <div @click="go2()">
                   <section>icon</section>
                   <p>收货人</p>
               </div>
-              <div>
+              <div @click="go3()">
                   <section>icon</section>
                   <p>申请团长</p>
               </div>
-              <div>
+              <div @click="go4()">
                   <section>icon</section>
                   <p>清除缓存</p>
               </div>
@@ -86,7 +86,36 @@
   </div>
 </template>
 <script>
+export default {
+  methods: {
+    jump1(){
+      this.$router.push({path:'/my/waitingPay'})
+    },
+    jump2(){
+      this.$router.push({path:'/my/alreadyPay'})
+    },
+    jump3(){
+      this.$router.push({path:'/my/waitingGet'})
+    },
+    jump4(){
+      this.$router.push({path:'/my/alreadyGet'})
+    },
+    go1(){
+      this.$router.push({path:'/my/myTeam'})
+    },
+    go2(){
+      this.$router.push({path:'/my/addressee'})
+    },
+    go3(){
+      this.$router.push({path:'/my/commander'})
+    },
+    go4(){
+      this.$router.push({path:'/my/clearCache'})
+    },
+  },
+}
 </script>
+
 <style lang='less'>
 @import "../common/style/index.less";
 .body {
