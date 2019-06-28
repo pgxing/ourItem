@@ -1,5 +1,5 @@
 <template>
-    <div class="serch">
+    <div class="search">
         <header>
             <div class="serInp">♥ 搜索</div>
         </header>
@@ -12,7 +12,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @import '~style/index.less'; 
-.serch{
+.search{
     height: 1000px;
     .w(375);
     background: orange;
