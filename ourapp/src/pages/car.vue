@@ -39,14 +39,17 @@
     </div>
     <div class="car-foot">
       <div class="leftDiv">
-        <input type="checkbox" @click="allChose">
+        <input type="checkbox" @click="allChose" ref="all">
         <span>全选</span>
       </div>
       <div class="rightDiv">
         <span>合计<b>￥{{allPrice}}</b></span>
-        <p ref="topay">未选购</p>
+        <p ref="topay"
+          @click="topay"
+        >未选购</p>
       </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -147,6 +150,13 @@ export default {
             this.$refs.topay.style.background = "#ccc";
         }
         
+      }
+    },
+    topay(){
+      let all = this.$refs.all
+      if(all.checked){
+        // this.$route.path('/home')
+        this.$router.push({path:'/car/pay',query : {buylist : this.list,allprice:Math.floor(this.allprice * 100) / 100}})
       }
     }
   },
