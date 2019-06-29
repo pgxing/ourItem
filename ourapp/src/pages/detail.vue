@@ -26,6 +26,7 @@
 </template>
 <script>
 import {mapGetters,mapState} from 'vuex'
+import { MessageBox } from 'mint-ui'
 export default {
     // data(){
     //     return{
@@ -38,12 +39,31 @@ export default {
         },
         first(){
             console.log('返回首页')
+            this.$router.replace("/home")
+            
+            this.$store.state.Detail.show=false
         },
         car(){
             console.log('购入车')
+            this.$router.replace("/car")
+            
+            this.$store.state.Detail.show=false
         },
         add(){
             console.log('加入购物车')
+//             this.$messagebox({
+
+//           title: '温馨提示',
+
+//           message: '订单支付成功',
+
+//           showCancelButton: true,
+
+//           confirmButtonText:"继续购物",
+
+//           cancelButtonText:"查看订单"
+
+//         })
         },
         buy(){
             console.log('立即购买')
@@ -53,6 +73,7 @@ export default {
     mounted(){
         //  let aaa = this.$store.state.Detail
         //  console.log('打印列表',aaa)
+        // MessageBox('提示', '生命周期加载完成');
     },
     computed:{
         show(){

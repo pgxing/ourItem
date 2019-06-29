@@ -34,10 +34,17 @@ import Mid from 'components/mid-con.vue'
 export default new Router({
   routes: [
       {
+        path:'/',
+        redirect:'/mid/推荐?id=0',
+      },
+      {
         path:'/home',
-        // redirect:'/home',
         component:Home,
         children:[
+          {
+            path:'/mid',
+            redirect:'/推荐?id=0',
+          },
           {
             path:'/mid/:id',
             component:Mid
@@ -46,7 +53,8 @@ export default new Router({
       },
       {
         path:'/car',
-        component:Car
+        component:Car,
+        
       },
       {
         path:'/my',

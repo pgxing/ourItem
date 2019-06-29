@@ -78,14 +78,14 @@ export default {
     h3 {
       .w(355);
       .h(45);
-      background: yellow;
+     
       .l_h(45);
       .padding(0, 0, 0, 10);
     }
     div {
       .w(355);
       .h(45);
-      background: green;
+      
       display: flex;
       justify-content: space-between;
       align-items: center;
