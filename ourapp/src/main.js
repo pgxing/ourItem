@@ -12,7 +12,6 @@ Vue.use(MintUi)
 Vue.config.productionTip = false
 import 'mint-ui/lib/style.css'
 new Vue({
-  router,
-  store,
+  router,store,
   render: h => h(App)
 }).$mount('#app')

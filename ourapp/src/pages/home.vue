@@ -59,13 +59,10 @@ export default {
     },
     mounted(){
         this.initData();
-        
         setTimeout(() => {
             this.initBS();
         }, 20)
     }
-
-   
 }
 </script>
 

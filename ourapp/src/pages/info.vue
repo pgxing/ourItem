@@ -59,7 +59,6 @@ export default {
       }
       //存进localstorage
       localStorage.setItem('info',JSON.stringify(this.carlist))
-      console.log(JSON.parse(localStorage.getItem('info')))
       // this.carlist.forEach(function(value,index){
       //     if(value == item){
 
