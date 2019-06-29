@@ -1,7 +1,7 @@
 <template>
   <div class="swiper">
     <ul class="info">
-      <li v-for="(item,index) in foodinfo" :key="index" class="alli">
+      <li v-for="(item,index) in foodinfo" :key="index" class="alli" @click = "play(index)">
         <img v-lazy="item.src"
             @click="todetail"
         >
@@ -62,12 +62,22 @@ export default {
     todetail(){
         console.log(this.$store.state.Detail.show)
         this.$store.state.Detail.show = true;
+    },
+    play(index){
+      this.$store.commit('play')
+      this.$store.commit('addImgList',this.foodinfo)
+      let list = this.foodinfo
+      
+
+      this.$store.commit('changeCurrentIndex',index)
     }
+
   },
   watch: {
     $route: function(newVal, oldVal) {
       let index = newVal.params.id;
       this.foodinfo = this.list[index].msg;
+      
     }
   },
   beforeMount(){
