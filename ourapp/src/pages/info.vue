@@ -40,7 +40,6 @@ export default {
       let flag = true;
       if(!item.id){
           item.id = 1;
-        //   this.carlist.push(item)
       }
       if (this.carlist.length == 0) {
         this.carlist.push(item);
@@ -59,12 +58,6 @@ export default {
       }
       //存进localstorage
       localStorage.setItem('info',JSON.stringify(this.carlist))
-      // this.carlist.forEach(function(value,index){
-      //     if(value == item){
-
-      //     }
-      // })
-      // console.log(this.carlist)
     },
     todetail(){
         console.log(this.$store.state.Detail.show)
@@ -77,10 +70,17 @@ export default {
       this.foodinfo = this.list[index].msg;
     }
   },
+  beforeMount(){
+    console.log(this.carlist)
+    let list = JSON.parse(localStorage.getItem("info"));
+    console.log(list)
+    this.carlist = list;
+  }
+  ,
   mounted() {
     this.initData();
     this.initBS();
-    // this.carlist = [];
+
   }
 };
 </script>
