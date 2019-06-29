@@ -1,10 +1,8 @@
 <template>
   <div class="swiper">
     <ul class="info">
-      <li v-for="(item,index) in foodinfo" :key="index" class="alli" @click = "play(index)">
-        <img v-lazy="item.src"
-            @click="todetail"
-        >
+      <li v-for="(item,index) in foodinfo" :key="index" class="alli">
+        <img v-lazy="item.src" @click="play(index)">
         <h3>{{item.titie}}</h3>
         <div>
           <span class="price">{{item.price}}</span>
@@ -21,7 +19,7 @@ export default {
     return {
       list: [],
       foodinfo: [],
-      carlist :[]
+      carlist: []
     };
   },
   methods: {
@@ -38,59 +36,50 @@ export default {
     },
     addcar(item) {
       let flag = true;
-      if(!item.id){
-          item.id = 1;
+      if (!item.id) {
+        item.id = 1;
       }
       if (this.carlist.length == 0) {
         this.carlist.push(item);
       } else {
         for (var i = 0; i < this.carlist.length; i++) {
           if (this.carlist[i].src == item.src) {
-              console.log(this.carlist[i].src)
-              this.carlist[i].id++;
-              flag = false;
-              break;
+            console.log(this.carlist[i].src);
+            this.carlist[i].id++;
+            flag = false;
+            break;
           }
         }
-        if(flag){
-            this.carlist.push(item)
+        if (flag) {
+          this.carlist.push(item);
         }
       }
       //存进localstorage
-      localStorage.setItem('info',JSON.stringify(this.carlist))
+      localStorage.setItem("info", JSON.stringify(this.carlist));
     },
-    todetail(){
-        console.log(this.$store.state.Detail.show)
-        this.$store.state.Detail.show = true;
-    },
-    play(index){
-      this.$store.commit('play')
-      this.$store.commit('addImgList',this.foodinfo)
-      let list = this.foodinfo
-      
+    play(index) {
+      this.$store.commit("play");
+      this.$store.commit("addImgList", this.foodinfo);
+      let list = this.foodinfo;
 
-      this.$store.commit('changeCurrentIndex',index)
+      this.$store.commit("changeCurrentIndex", index);
     }
-
   },
   watch: {
     $route: function(newVal, oldVal) {
       let index = newVal.params.id;
       this.foodinfo = this.list[index].msg;
-      
     }
   },
-  beforeMount(){
-    console.log(this.carlist)
-    let list = JSON.parse(localStorage.getItem("info"));
-    console.log(list)
-    this.carlist = list;
-  }
-  ,
+  beforeMount() {
+    if (localStorage.getItem("info")) {
+      let list = JSON.parse(localStorage.getItem("info"));
+      this.carlist = list;
+    }
+  },
   mounted() {
     this.initData();
     this.initBS();
-
   }
 };
 </script>

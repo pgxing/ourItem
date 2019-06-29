@@ -5,6 +5,7 @@ Vue.use(Router)
 //主页面路由
 import Home from 'pages/home'
 import Car from 'pages/car'
+import Pay from 'pages/pay'
 import My from 'pages/my'
 import Search from 'pages/search'
 import Tosearch from 'pages/search/tosearch'
