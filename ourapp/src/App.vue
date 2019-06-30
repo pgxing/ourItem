@@ -5,7 +5,11 @@
     <router-view/>
 
     <MNav></MNav>
+   
     <Detail></Detail>
+     <!-- <router-view/> -->
+    
+    <!-- <Information></Information> -->
   </div>
 </template>
 <script>
@@ -16,7 +20,7 @@ export default {
   components:{
     MHead,
     MNav,
-    Detail
+    Detail,
   }
 }
 </script>

@@ -10,6 +10,7 @@ import Search from 'pages/search'
 import Tosearch from 'pages/search/tosearch'
 
 
+
 import Info from 'pages/info'
 import WaitingPay from 'pages/My/waitingPay'
 import AlreadyPay from 'pages/My/alreadyPay'
@@ -19,6 +20,7 @@ import MyTeam from 'pages/My/myTeam'
 import Addressee from 'pages/My/addressee'
 import Commander from 'pages/My/commander'
 import ClearCache from 'pages/My/clearCache'
+import Information from 'pages/My/information'
 
 
 import Mid from 'components/mid-con.vue'
@@ -84,6 +86,10 @@ export default new Router({
           path:'/clearCache',
           component:ClearCache
         },
+        {
+          path:'information',
+          components:{Information}
+        }
       ]
       },
       {
