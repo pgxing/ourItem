@@ -2,7 +2,7 @@
     <div id="ddd">
        <nav>
            <span @click="back()"><</span>
-           <span>申请团长</span>
+           <span>我的果币</span>
        </nav>
     </div>
    
@@ -45,3 +45,4 @@ nav span:nth-child(2){
 }
 
 </style>
+

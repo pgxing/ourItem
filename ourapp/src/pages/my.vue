@@ -11,20 +11,20 @@
         </div>
         <div class="top_1r">
           <p>二维码</p>
-          
+
           <h6>邀请码</h6>
         </div>
       </section>
       <section class="top_2">
-        <div>
+        <div @click="turn1()">
           <figure>0</figure>
           <aside>果币</aside>
         </div>
-        <div>
+        <div @click="turn2()">
           <figure>0</figure>
           <aside>优惠券</aside>
         </div>
-        <div>
+        <div @click="turn3()">
           <figure>0</figure>
           <aside>粉丝</aside>
         </div>
@@ -33,93 +33,114 @@
     <!--我的订单-->
     <div class="middle_1">
       <div class="middle_1c">
-          <div class="middle_1ct">
-              <span>我的订单</span>
-              <span>全部订单></span>
+        <div class="middle_1ct">
+          <span>我的订单</span>
+          <span @click="to()">全部订单></span>
+        </div>
+        <div class="middle_1cb">
+          <div @click="jump1()">
+            <section>icon</section>
+            <p>待付款</p>
           </div>
-          <div class="middle_1cb">
-              <div @click="jump1()">
-                  <section>icon</section>
-                  <p>待付款</p>
-              </div>
-              <div @click="jump2()">
-                  <section>icon</section>
-                  <p>已付款</p>
-              </div>
-              <div @click="jump3()">
-                  <section>icon</section>
-                  <p>待发货</p>
-              </div>
-              <div @click="jump4()">
-                  <section>icon</section>
-                  <p>待收货</p>
-              </div>
+          <div @click="jump2()">
+            <section>icon</section>
+            <p>已付款</p>
           </div>
+          <div @click="jump3()">
+            <section>icon</section>
+            <p>待发货</p>
+          </div>
+          <div @click="jump4()">
+            <section>icon</section>
+            <p>待收货</p>
+          </div>
+        </div>
       </div>
     </div>
     <!--其他服务-->
     <div class="middle_2">
-        <h3>其他服务</h3>
-        <div class="middle_2c">
-              <div @click="go1()">
-                  <section>icon</section>
-                  <p>我的团长</p>
-              </div>
-              <div @click="go2()">
-                  <section>icon</section>
-                  <p>收货人</p>
-              </div>
-              <div @click="go3()">
-                  <section>icon</section>
-                  <p>申请团长</p>
-              </div>
-              <div @click="go4()">
-                  <section>icon</section>
-                  <p>清除缓存</p>
-              </div>
-          </div>
+      <h3>其他服务</h3>
+      <div class="middle_2c">
+        <div @click="go1()">
+          <section>icon</section>
+          <p>我的团长</p>
+        </div>
+        <div @click="go2()">
+          <section>icon</section>
+          <p>收货人</p>
+        </div>
+        <div @click="go3()">
+          <section>icon</section>
+          <p>申请团长</p>
+        </div>
+        <div @click="go4()">
+          <section>icon</section>
+          <p>清除缓存</p>
+        </div>
+      </div>
     </div>
     <div class="bottom">
-        <p>购买的商品有任何问题，请联系团长处理售后问题。如果联系不到所属团长，请直接联系知花知果客服热线！</p>
-        <span>18108293702</span>
+      <p>购买的商品有任何问题，请联系团长处理售后问题。如果联系不到所属团长，请直接联系知花知果客服热线！</p>
+      <span>18108293702📞</span>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 <script>
+import { MessageBox } from "mint-ui";
 export default {
   methods: {
-    jump1(){
-      this.$router.push({path:'/my/waitingPay'})
+    to() {
+      this.$router.push({ path: "/orders" });
     },
-    jump2(){
-      this.$router.push({path:'/my/alreadyPay'})
+    turn1() {
+      this.$router.push({ path: "/my/coin" });
     },
-    jump3(){
-      this.$router.push({path:'/my/waitingGet'})
+    turn2() {
+      this.$router.push({ path: "/coupon" });
     },
-    jump4(){
-      this.$router.push({path:'/my/alreadyGet'})
+    turn3() {
+      this.$router.push({ path: "/my/fans" });
     },
-    go1(){
-      this.$router.push({path:'/my/myTeam'})
+    jump1() {
+      this.$router.push({ path: "/orders" });
     },
-    go2(){
-      this.$router.push({path:'/my/addressee'})
+    jump2() {
+      this.$router.push({ path: "/orders" });
     },
-    go3(){
-      this.$router.push({path:'/my/commander'})
+    jump3() {
+      this.$router.push({ path: "/orders" });
     },
-    go4(){
-      this.$router.push({path:'/my/clearCache'})
+    jump4() {
+      this.$router.push({ path: "/orders" });
     },
-  },
-}
+    go1() {
+      this.$router.push({ path: "/my/myTeam" });
+    },
+    go2() {
+      this.$router.push({ path: "/my/addressee" });
+    },
+    go3() {
+      this.$router.push({ path: "/my/commander" });
+    },
+    go4() {
+      this.$messagebox({
+        title: "温馨提示",
+        message: "确定要清除缓存吗？",
+        showCancelButton: true,
+        // confirmButtonText: "确定",
+        // cancelButtonText: "取消"
+      });
+    }
+  }
+};
 </script>
 
 <style lang='less'>
 @import "../common/style/index.less";
 .body {
   height: 100%;
+  position: relative;
 }
 .top {
   .w(375);
@@ -168,7 +189,6 @@ export default {
 .top_1r p {
   .f_s(15);
   color: #fff;
-
 }
 .top_1r h6 {
   .f_s(15);
@@ -213,68 +233,67 @@ export default {
   position: absolute;
   .top(-20);
 }
-.middle_1ct{
-    .w(340);
-    .h(50);
-    .margin(0,0,0,8);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom:1px solid rgba(154,154,154,0.1);
+.middle_1ct {
+  .w(340);
+  .h(50);
+  .margin(0, 0, 0, 8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(154, 154, 154, 0.1);
 }
-.middle_1ct span:nth-child(1){
-    .f_s(18);
-    font-weight: 600;
+.middle_1ct span:nth-child(1) {
+  .f_s(18);
+  font-weight: 600;
 }
-.middle_1ct span:nth-child(2){
-    .f_s(16);
-    color:#A8A8A8;
+.middle_1ct span:nth-child(2) {
+  .f_s(16);
+  color: #a8a8a8;
 }
-.middle_1cb{
-    .w(355);
-    .h(97);
-    background:green;
-     display:flex;
-     align-items: center;
-     justify-content: space-around;
+.middle_1cb {
+  .w(355);
+  .h(97);
+  background: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.middle_1cb div{
-    .w(60);
-    .h(80);
-    background:pink;
-    text-align: center;
-   
+.middle_1cb div {
+  .w(60);
+  .h(80);
+  background: pink;
+  text-align: center;
 }
-.middle_1cb section{
-    .f_s(15);
+.middle_1cb section {
+  .f_s(15);
 }
-.middle_1cb p{
-    .f_s(16);
+.middle_1cb p {
+  .f_s(16);
 }
 /*其他服务*/
 .middle_2 {
   .w(375);
   .h(135);
   background: #fff;
-    .padding(12,0,0,0);
+  .padding(12, 0, 0, 0);
 }
-.middle_2 h3{
-      .f_s(18);
-    font-weight: 600;
+.middle_2 h3 {
+  .f_s(18);
+  font-weight: 600;
 }
-.middle_2c{
-    .w(375);
-    .h(110);
-    display:flex;
-       align-items: center;
-     justify-content: space-around;
-    background:blueviolet;
+.middle_2c {
+  .w(375);
+  .h(110);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: blueviolet;
 }
-.middle_2c section{
-    .f_s(15);
+.middle_2c section {
+  .f_s(15);
 }
-.middle_2c p{
-    .f_s(16);
+.middle_2c p {
+  .f_s(16);
 }
 /*bottom*/
 .bottom {
@@ -282,7 +301,11 @@ export default {
   .h(182);
   background: #f7f6f6;
 }
-.bottom p{
-    .f_s(14);
+.bottom p {
+  .f_s(14);
+}
+.bottom span{
+  color:red;
+  .f_s(12);
 }
 </style>
