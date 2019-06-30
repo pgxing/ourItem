@@ -40,6 +40,10 @@ export default new Router({
       },
       {
         path:'/home',
+        redirect:'/mid/推荐?id=0',
+      },
+      {
+        path:'/home',
         component:Home,
         children:[
           {
@@ -55,7 +59,12 @@ export default new Router({
       {
         path:'/car',
         component:Car,
-        
+        children:[
+          {
+            path:'pay',
+            component:Pay
+          }
+        ]
       },
       {
         path:'/my',

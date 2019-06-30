@@ -7,7 +7,9 @@
     <div class="content">
       <div class="box">
         <div class="userinfo">
-            <div class="user"><span>收货人：</span><span>》</span></div>
+            <div class="user" 
+              @click="toadduser"
+            ><span>收货人：</span><span>》</span></div>
             <div class="addess"><span>提货地址：</span><span>》</span></div>
         </div>
         <ul>
@@ -46,7 +48,8 @@ import BS from "better-scroll";
 export default {
   data() {
     return {
-      list: []
+      list: [],
+      usersInfo : []
     };
   },
   methods: {
@@ -58,9 +61,17 @@ export default {
     },
     comprice(price, id) {
       return Math.floor(price.slice(1) * id * 100) / 100;
+    },
+    toadduser(){
+      this.$router.push('')
     }
   },
   mounted() {
+    //从localStorage中获取收货人信息
+    if(localStorage.users){
+      let usersInfo = JSON.parse(localStorage.getItem('user'))
+      this.usersInfo = usersInfo
+    }
     this.list = this.$route.query.buylist;
     console.log(this.list);
     this.initBS();
