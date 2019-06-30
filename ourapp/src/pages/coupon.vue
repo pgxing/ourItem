@@ -1,7 +1,7 @@
 <template>
   <div id="body">
     <nav>
-      <span @click="back()"><</span>
+      <span @click="back()">《</span>
       <span>我的优惠券</span>
     </nav>
     <ul class="list">

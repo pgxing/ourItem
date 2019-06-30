@@ -2,7 +2,7 @@
   <div class="body">
     <div class="top">
       <section class="top_1">
-        <div class="top_1l">
+        <div class="top_1l" @click="jumpInfor">
           <img src="../img/timg.jpg" alt>
           <article>
             <h4>jonathan</h4>
@@ -83,13 +83,21 @@
       <p>购买的商品有任何问题，请联系团长处理售后问题。如果联系不到所属团长，请直接联系知花知果客服热线！</p>
       <span>18108293702📞</span>
     </div>
-    <router-view></router-view>
+    
+    <router-view name="Information"></router-view>
+
   </div>
 </template>
 <script>
 import { MessageBox } from "mint-ui";
 export default {
   methods: {
+    jumpInfor(){
+      this.$router.push({path:'/My/information'})
+    },
+    jump1(){
+      this.$router.push({path:'/my/waitingPay'})
+      },
     to() {
       this.$router.push({ path: "/orders" });
     },

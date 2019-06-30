@@ -1,7 +1,7 @@
 <template>
     <div id="ddd">
        <nav>
-           <span @click="back()"><</span>
+           <span @click="back()">《</span>
            <span>我的果币</span>
        </nav>
     </div>
