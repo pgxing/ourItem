@@ -7,7 +7,7 @@ import Detail from './detail/index'
 Vue.use(Vuex);
 let store=new Vuex.Store({
     modules:{
-        Detail
+        Detail,
     }
 })
 export default store

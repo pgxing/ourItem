@@ -28,7 +28,7 @@ export default {
 <style lang="less">
   @import './common/style/index.less';
   #app{
-    background:#222;
+    background:rgb(247, 243, 243);
     position:fixed;
     top:0;
     bottom:0;

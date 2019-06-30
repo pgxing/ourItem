@@ -1,3 +1,5 @@
 export default{
-    show:false
+    show:false,
+    imgList:[],
+    currentIndex:-1
 }
