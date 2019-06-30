@@ -1,7 +1,7 @@
 <template>
   <div id="ddd">
     <nav>
-      <span @click="back()"><</span>
+      <span @click="back()">《</span>
       <span>我的收货人</span>
     </nav>
     <button @click="to()">新增收货人</button>
@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push({ path: "/my" });
+      this.$router.go(-1)
     },
     to() {
       this.$router.push({ path: "/createAddressee" });

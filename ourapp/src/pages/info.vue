@@ -59,9 +59,7 @@ export default {
     },
     play(index) {
       this.$store.commit("play");
-      this.$store.commit("addImgList", this.foodinfo);
-      let list = this.foodinfo;
-
+      this.$store.commit("addImgList", this.foodinfo,this.carlist);
       this.$store.commit("changeCurrentIndex", index);
     }
   },

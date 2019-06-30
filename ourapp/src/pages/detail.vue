@@ -28,11 +28,11 @@
 import {mapGetters,mapState} from 'vuex'
 import { MessageBox } from 'mint-ui'
 export default {
-    // data(){
-    //     return{
-    //         asd:[]
-    //     }
-    // },
+    data(){
+        return{
+            carlist:[]
+        }
+    },
     methods:{
         close(){
             this.$store.state.Detail.show = false;
@@ -50,20 +50,31 @@ export default {
             this.$store.state.Detail.show=false
         },
         add(){
-            console.log('加入购物车')
-//             this.$messagebox({
-
-//           title: '温馨提示',
-
-//           message: '订单支付成功',
-
-//           showCancelButton: true,
-
-//           confirmButtonText:"继续购物",
-
-//           cancelButtonText:"查看订单"
-
-//         })
+            let flag = true
+            console.log(this.$store.getters.currentImg)
+            for(var i = 0 ; i < this.carlist.length ; i++){
+                if(this.carlist[i].src == this.$store.getters.currentImg.src){
+                    console.log(111)
+                    this.carlist[i].id++;
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                let curinfo = this.$store.getters.currentImg;
+                if(!curinfo.id){
+                    curinfo.id = 1;
+                }
+                this.carlist.push(curinfo)
+                console.log('添加到列表')
+            }
+            //设置localStorage
+            localStorage.setItem('info',JSON.stringify(this.carlist))
+            this.$messagebox({
+                title: '温馨提示',
+                message: '加入购物车成功',
+                confirmButtonText:"继续购物"
+             })
         },
         buy(){
             console.log('立即购买')
@@ -71,24 +82,26 @@ export default {
 
     },
     mounted(){
-        //  let aaa = this.$store.state.Detail
-        //  console.log('打印列表',aaa)
-        // MessageBox('提示', '生命周期加载完成');
+        if (localStorage.info) {
+            let list = JSON.parse(localStorage.getItem("info"));
+            this.carlist = list;
+        }
+        console.log(this.$store.getters.currentImg)
     },
     computed:{
-        show(){
-            return this.$store.state.Detail.show
-        },
+        // show(){
+        //     return this.$store.state.Detail.show
+        // },
         ...mapGetters(['currentImg']),
         ...mapState(['currentIndex']),
     },
-    watch:{
-        show(){
+    // watch:{
+    //     show(){
            
-            this.asd = this.$store.state.Detail.imgList
-            console.log(this.asd)
-        }
-    }
+    //         this.asd = this.$store.state.Detail.imgList
+    //         console.log(this.asd)
+    //     }
+    // }
 }
 </script>
 <style lang="less" scoped>

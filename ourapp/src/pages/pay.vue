@@ -9,8 +9,8 @@
         <div class="userinfo">
             <div class="user" 
               @click="toadduser"
-            ><span>收货人：</span><span>》</span></div>
-            <div class="addess"><span>提货地址：</span><span>》</span></div>
+            ><span>收货人：</span>{{usersInfo.user}}{{usersInfo.phone}}<span>》</span></div>
+            <div class="addess"><span>提货地址：</span>{{usersInfo.address}}</div>
         </div>
         <ul>
           <li class="foodinfo">商品信息</li>
@@ -63,17 +63,22 @@ export default {
       return Math.floor(price.slice(1) * id * 100) / 100;
     },
     toadduser(){
-      this.$router.push('')
+      this.$router.push('/my/addressee')
     }
   },
   mounted() {
     //从localStorage中获取收货人信息
     if(localStorage.users){
-      let usersInfo = JSON.parse(localStorage.getItem('user'))
-      this.usersInfo = usersInfo
+      let usersInfo = JSON.parse(localStorage.getItem('users'))
+      this.usersInfo = usersInfo[0]
+      console.log(this.usersInfo)
     }
-    this.list = this.$route.query.buylist;
-    console.log(this.list);
+    //从非购物车的其他路由跳到这个路由时，会重新挂载，但是接收不到传来的数据，会报错，所以在第一次挂载页面时，
+    //把传来的数据，先存进本地缓存，下次调用时，就判断是否传入了新的参数，如果没有，则调用缓存
+    if(this.$route.query.buylist[0].src){
+      localStorage.setItem('buylist',JSON.stringify(this.$route.query.buylist))
+    }
+    this.list = JSON.parse(localStorage.getItem('buylist'))
     this.initBS();
   }
 };
@@ -85,7 +90,6 @@ export default {
   top: 0;
   bottom: 0;
   z-index: 5;
-  background: skyblue;
   .w(375);
   header {
     .h(44);
@@ -126,7 +130,6 @@ export default {
             .padding(10, 12, 10, 12);
             .h(47);
             .w(351);
-            background: skyblue;
             .l_h(27);
         }
         .addess{
@@ -137,7 +140,7 @@ export default {
             .w(351);
             .l_h(50);
             border-top: 1px solid #f6f6f6;
-            background: yellow;
+            text-align: left;
         }
       }
       ul {

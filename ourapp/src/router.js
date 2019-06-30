@@ -8,16 +8,13 @@ import Car from 'pages/car'
 import Pay from 'pages/pay'
 import My from 'pages/my'
 import Search from 'pages/search'
-<<<<<<< HEAD
 import Coin from 'pages/My/coin'
 import Coupon from 'pages/coupon'
 import Fans from 'pages/My/fans'
-=======
 import Tosearch from 'pages/search/tosearch'
 
 
 import Info from 'pages/info'
->>>>>>> 3686f3a67dc95910d4bb728cf644700bfd8a8d8e
 import WaitingPay from 'pages/My/waitingPay'
 import AlreadyPay from 'pages/My/alreadyPay'
 import WaitingGet from 'pages/My/waitingGet'
@@ -32,129 +29,125 @@ import CreateAddressee from 'pages/createAddressee'
 
 import Mid from 'components/mid-con.vue'
 
-  //home页面插件路由
-  // import Recommend from 'components/recommend.vue'
-  // import Place from 'components/place.vue'
-  // import Snack from 'components/snack.vue'
-  // import Vegetables from 'components/vegetables.vue'
-  // import Flowers from 'components/flowers.vue'
-  // import Life from 'components/lefe.vue'`
+//home页面插件路由
+// import Recommend from 'components/recommend.vue'
+// import Place from 'components/place.vue'
+// import Snack from 'components/snack.vue'
+// import Vegetables from 'components/vegetables.vue'
+// import Flowers from 'components/flowers.vue'
+// import Life from 'components/lefe.vue'`
 
 export default new Router({
   routes: [
-      {
-        path:'/',
-        redirect:'/mid/推荐?id=0',
-      },
-      {
-        path:'/home',
-        redirect:'/mid/推荐?id=0',
-      },
-      {
-        path:'/home',
-        component:Home,
-        children:[
-          {
-            path:'/mid',
-            redirect:'/推荐?id=0',
-          },
-          {
-            path:'/mid/:id',
-            component:Mid
-          }
-        ]
-      },
-      {
-        path:'/car',
-        component:Car,
-        children:[
-          {
-            path:'pay',
-            component:Pay
-          }
-        ]
-      },
-      {
-        path:'/my',
-        component:My,
-        children:[
-          {
-            path:'coin',
-            component:Coin
-          },
-          {
-            path:'fans',
-            component:Fans
-          },
+    {
+      path: '/',
+      redirect: '/home/mid/推荐?id=0',
+    },
+    {
+      path: '/home',
+      redirect: '/home/mid/推荐?id=0',
+    },
+    {
+      path: '/home',
+      component: Home,
+      children: [
         {
-          path:'waitingPay',
-          component:WaitingPay
+          path: 'mid',
+          redirect: '/推荐?id=0',
         },
         {
-          path:'alreadyPay',
-          component:AlreadyPay
+          path: 'mid/:id',
+          component: Mid
+        }
+      ]
+    },
+    {
+      path: '/car',
+      component: Car,
+      children: [
+        {
+          path: 'pay',
+          component: Pay
+        }
+      ]
+    },
+    {
+      path: '/my',
+      component: My,
+      children: [
+        {
+          path: 'coin',
+          component: Coin
         },
         {
-          path:'waitingGet',
-          component:WaitingGet
+          path: 'fans',
+          component: Fans
         },
         {
-          path:'alreadyGet',
-          component:AlreadyGet
+          path: 'waitingPay',
+          component: WaitingPay
         },
         {
-          path:'myTeam',
-          component:MyTeam
+          path: 'alreadyPay',
+          component: AlreadyPay
         },
         {
-          path:'addressee',
-          component:Addressee,
+          path: 'waitingGet',
+          component: WaitingGet
         },
         {
-          path:'commander',
-          component:Commander
+          path: 'alreadyGet',
+          component: AlreadyGet
         },
         {
-          path:'clearCache',
-          component:ClearCache
+          path: 'myTeam',
+          component: MyTeam
+        },
+        {
+          path: 'addressee',
+          component: Addressee,
+        },
+        {
+          path: 'commander',
+          component: Commander
+        },
+        {
+          path: 'clearCache',
+          component: ClearCache
         },
       ]
-      },
-      {
-        path:'/search',
-<<<<<<< HEAD
-        component:Search
-      },
-      /* 全部订单*/
-      {
-        path:'/orders',
-        component:Orders
-      },
-      {
-        path:'/coupon',
-        component:Coupon
-      },
-      {
-        path:'/createAddressee',
-        component:CreateAddressee
-=======
-        component:Search,
-        children:[
-          
-          {
-            path:'info/:id',
-            components:{Info}
-          },
-          {
-            path:'/',
-            redirect:'info/0'
-          },
-          {
-            path:'tosearch',
-            components:{Tosearch}
-          }
-        ]
->>>>>>> 3686f3a67dc95910d4bb728cf644700bfd8a8d8e
-      }
+    },
+    {
+      path: '/search',
+      component: Search,
+      children: [
+        {
+          path: 'info/:id',
+          components: { Info }
+        },
+        {
+          path: '/',
+          redirect: 'info/0'
+        },
+        {
+          path: 'tosearch',
+          components: { Tosearch }
+        }
+      ]
+    },
+    /* 全部订单*/
+    {
+      path: '/orders',
+      component: Orders
+    },
+    {
+      path: '/coupon',
+      component: Coupon
+    },
+    {
+      path: '/createAddressee',
+      component: CreateAddressee
+
+    }
   ]
 })
