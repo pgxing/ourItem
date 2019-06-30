@@ -1,15 +1,20 @@
 <template>
     <div class="serch">
         <header>
-            <div class="serInp">♥ 搜索</div>
+            <div class="serInp"
+                @click="tosearch"
+            >♥ 搜索</div>
         </header>
+        <!-- <router-view name="Tosearch"></router-view> -->
         <ul class="aside">
             <li v-for="(item,index) in info"
                 :key="index"
                 @click="chose(index)"
                 :class="index == state ? 'green' : ''"
-            >{{item.title}}{{index}}</li>
+            ><span>{{item.title}}</span></li>
         </ul>
+        <router-view name="Tosearch"></router-view>
+        <router-view name="Info"></router-view>
     </div>
 </template>
 <script>
@@ -31,8 +36,13 @@ export default {
             })
         },
         chose(index){
-            console.log(index)
             this.state = index;
+            //显示商品列表
+            
+            this.$router.push({path:`/search/info/${index}`})
+        },
+        tosearch(){
+            this.$router.push({path:'/search/tosearch'})
         }
     },
     mounted(){
@@ -43,9 +53,10 @@ export default {
 <style lang="less" scoped>
 @import '~style/index.less'; 
 .serch{
+    
     height: 100%;
     .w(375);
-    background: orange;
+    background: #fff;
     header{
         .h(55);
         .w(375);
@@ -66,16 +77,28 @@ export default {
     .aside{
         height: 100%;
         .w(90);
+        float: left;
         background: #f7f7f8;
         li{
             .f_s(14);
             .h(48);
             .l_h(48);
             text-align: center;
+            span{
+                .h(16);
+                .l_h(16);
+                .w(90);
+                display: inline-block;
+                border-left: 4px solid #f7f7f8;
+                
+            }
         }
         .green{
             color: #99bb42;
             background: #fff;
+            span{
+                border-left: 4px solid #99bd42;
+            }
         }
     }
 }

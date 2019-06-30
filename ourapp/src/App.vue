@@ -5,16 +5,18 @@
     <router-view/>
 
     <MNav></MNav>
-    
+    <Detail></Detail>
   </div>
 </template>
 <script>
 import MHead from './components/m-head'
 import MNav from './components/m-nav'
+import Detail from './pages/detail'
 export default {
   components:{
     MHead,
-    MNav
+    MNav,
+    Detail
   }
 }
 </script>
@@ -22,7 +24,7 @@ export default {
 <style lang="less">
   @import './common/style/index.less';
   #app{
-    background:#222;
+    background:rgb(247, 243, 243);
     position:fixed;
     top:0;
     bottom:0;

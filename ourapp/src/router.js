@@ -5,11 +5,19 @@ Vue.use(Router)
 //主页面路由
 import Home from 'pages/home'
 import Car from 'pages/car'
+import Pay from 'pages/pay'
 import My from 'pages/my'
 import Search from 'pages/search'
+<<<<<<< HEAD
 import Coin from 'pages/My/coin'
 import Coupon from 'pages/coupon'
 import Fans from 'pages/My/fans'
+=======
+import Tosearch from 'pages/search/tosearch'
+
+
+import Info from 'pages/info'
+>>>>>>> 3686f3a67dc95910d4bb728cf644700bfd8a8d8e
 import WaitingPay from 'pages/My/waitingPay'
 import AlreadyPay from 'pages/My/alreadyPay'
 import WaitingGet from 'pages/My/waitingGet'
@@ -20,6 +28,9 @@ import Commander from 'pages/My/commander'
 import ClearCache from 'pages/My/clearCache'
 import Orders from 'pages/orders'
 import CreateAddressee from 'pages/createAddressee'
+
+
+import Mid from 'components/mid-con.vue'
 
   //home页面插件路由
   // import Recommend from 'components/recommend.vue'
@@ -32,12 +43,27 @@ import CreateAddressee from 'pages/createAddressee'
 export default new Router({
   routes: [
       {
+        path:'/',
+        redirect:'/mid/推荐?id=0',
+      },
+      {
         path:'/home',
         component:Home,
+        children:[
+          {
+            path:'/mid',
+            redirect:'/推荐?id=0',
+          },
+          {
+            path:'/mid/:id',
+            component:Mid
+          }
+        ]
       },
       {
         path:'/car',
-        component:Car
+        component:Car,
+        
       },
       {
         path:'/my',
@@ -87,6 +113,7 @@ export default new Router({
       },
       {
         path:'/search',
+<<<<<<< HEAD
         component:Search
       },
       /* 全部订单*/
@@ -101,6 +128,24 @@ export default new Router({
       {
         path:'/createAddressee',
         component:CreateAddressee
+=======
+        component:Search,
+        children:[
+          
+          {
+            path:'info/:id',
+            components:{Info}
+          },
+          {
+            path:'/',
+            redirect:'info/0'
+          },
+          {
+            path:'tosearch',
+            components:{Tosearch}
+          }
+        ]
+>>>>>>> 3686f3a67dc95910d4bb728cf644700bfd8a8d8e
       }
   ]
 })
