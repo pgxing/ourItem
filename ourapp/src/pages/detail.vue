@@ -86,7 +86,6 @@ export default {
             let list = JSON.parse(localStorage.getItem("info"));
             this.carlist = list;
         }
-        console.log(this.$store.getters.currentImg)
     },
     computed:{
         // show(){
