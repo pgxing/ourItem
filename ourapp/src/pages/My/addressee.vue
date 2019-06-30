@@ -48,7 +48,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "../../common/style/index.less";
+@import "~style/index.less";
 #ddd {
   .w(375);
   .h(667);
