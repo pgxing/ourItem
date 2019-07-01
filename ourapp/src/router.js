@@ -140,7 +140,6 @@ export default new Router({
           components: { Tosearch }
         }
       ]
-<<<<<<< HEAD
       },
       {
         path:'/search',
@@ -175,22 +174,5 @@ export default new Router({
 
       
       }
-=======
-    },
-    /* 全部订单*/
-    {
-      path: '/orders',
-      component: Orders
-    },
-    {
-      path: '/coupon',
-      component: Coupon
-    },
-    {
-      path: '/createAddressee',
-      component: CreateAddressee
-
-    }
->>>>>>> 4cf85a2f84d7726bd2901c6ac8e044c85328ce9c
   ]
 })

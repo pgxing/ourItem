@@ -1,12 +1,4 @@
 <template>
-<<<<<<< HEAD
-  <div id="ddd">
-    <nav>
-      <span @click="back()"><</span>
-      <span>我的团长</span>
-    </nav>
-  </div>
-=======
     <div id="ddd">
        <nav>
            <span @click="back()">》</span>
@@ -14,7 +6,6 @@
        </nav>
     </div>
    
->>>>>>> 4cf85a2f84d7726bd2901c6ac8e044c85328ce9c
 </template>
 <script>
 import { MessageBox } from "mint-ui";
