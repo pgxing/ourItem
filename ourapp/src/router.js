@@ -8,16 +8,13 @@ import Car from 'pages/car'
 import Pay from 'pages/pay'
 import My from 'pages/my'
 import Search from 'pages/search'
-<<<<<<< HEAD
 import Coin from 'pages/My/coin'
 import Coupon from 'pages/coupon'
 import Fans from 'pages/My/fans'
-=======
 import Tosearch from 'pages/search/tosearch'
 
 
 import Info from 'pages/info'
->>>>>>> 3686f3a67dc95910d4bb728cf644700bfd8a8d8e
 import WaitingPay from 'pages/My/waitingPay'
 import AlreadyPay from 'pages/My/alreadyPay'
 import WaitingGet from 'pages/My/waitingGet'
@@ -113,25 +110,8 @@ export default new Router({
       },
       {
         path:'/search',
-<<<<<<< HEAD
-        component:Search
-      },
-      /* 全部订单*/
-      {
-        path:'/orders',
-        component:Orders
-      },
-      {
-        path:'/coupon',
-        component:Coupon
-      },
-      {
-        path:'/createAddressee',
-        component:CreateAddressee
-=======
         component:Search,
         children:[
-          
           {
             path:'info/:id',
             components:{Info}
@@ -145,7 +125,21 @@ export default new Router({
             components:{Tosearch}
           }
         ]
->>>>>>> 3686f3a67dc95910d4bb728cf644700bfd8a8d8e
+      },
+      /* 全部订单*/
+      {
+        path:'/orders',
+        component:Orders
+      },
+      {
+        path:'/coupon',
+        component:Coupon
+      },
+      {
+        path:'/createAddressee',
+        component:CreateAddressee
+
+      
       }
   ]
 })

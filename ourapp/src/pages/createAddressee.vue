@@ -124,13 +124,33 @@ nav span:nth-child(2) {
   .f_s(18);
 }
 .biaoge td {
-  border: 1px solid red;
+border-bottom:1px solid rgba(158,158,158,0.1);
 }
 .biaoge input {
   display: inline-block;
-  border: 1px solid green;
+ 
   .h(30);
   .w(170);
+}
+.biaoge tr:nth-child(2) button{
+  background:#99BC42;
+  border-style: none;
+  color:#fff;
+  .w(110);
+  .h(30);
+  border-radius:4px;
+}
+.biaoge tr:nth-child(4) input{
+  .w(240);
+}
+.submit{
+  .w(375);
+  .h(50);
+  background:#99BC42;
+  color:#fff;
+   border-style: none;
+    border-radius:30px;
+    .f_s(18);
 }
 </style>
 

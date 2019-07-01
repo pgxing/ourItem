@@ -28,21 +28,22 @@ export default {
         position:absolute;
         bottom:0;
         display: flex;
-        background: green;
+        background: #fff;
         justify-content: space-around;
         .w(375);
         li{
             // .h(44);
             height: 44px;
             .l_h(44);
-            color:#fff;
+            color:#BBBBBB;
             .f_s(14);
             span{
             padding-bottom:3px; 
             }
         }
         .sel{
-            color: yellow;
+            color: #A1C729
+;
         }
 }
    

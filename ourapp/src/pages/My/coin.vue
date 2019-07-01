@@ -8,11 +8,15 @@
    
 </template>
 <script>
+import { MessageBox } from "mint-ui";
 export default {
     methods: {
         back(){
             this.$router.push({path:'/my'})
         }
+    },
+    mounted() {
+        MessageBox('温馨提示', '该功能暂未上线，敬请期待~');
     },
 }
 </script>

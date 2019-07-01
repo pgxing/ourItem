@@ -19,6 +19,7 @@
   </div>
 </template>
 <script>
+import { MessageBox } from "mint-ui";
 export default {
   data() {
     return {
@@ -33,7 +34,10 @@ export default {
     chose(index) {
       this.state = index;
     }
-  }
+  },
+   mounted() {
+        MessageBox('温馨提示', '该功能暂未上线，敬请期待~');
+    },
 };
 </script>
 <style lang='less' scoped>

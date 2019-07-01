@@ -184,7 +184,7 @@ button {
   align-items: center;
   .h(44);
   .w(375);
-  background: @bg-color-blue;
+  background: #A1C729;
   .f_s(14);
   color: @font-color-white;
   .rightDiv {

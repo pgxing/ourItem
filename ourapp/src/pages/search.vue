@@ -60,7 +60,7 @@ export default {
     header{
         .h(55);
         .w(375);
-        background: #99bb42;
+        background: #A1C729;
         .padding(12,0,0,12);
         .serInp{
             .w(351);

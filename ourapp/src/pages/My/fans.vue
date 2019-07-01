@@ -11,6 +11,7 @@
   </div>
 </template>
 <script>
+import { MessageBox } from "mint-ui";
 export default {
  
   methods: {
@@ -20,7 +21,10 @@ export default {
     chose(index) {
       this.state = index;
     }
-  }
+  },
+   mounted() {
+        MessageBox('温馨提示', '要啥自行车啊~');
+    },
 };
 </script>
 <style lang='less' scoped>

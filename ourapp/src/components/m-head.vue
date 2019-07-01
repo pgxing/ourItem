@@ -15,7 +15,7 @@ export default {
     .m-head{
         .w(375);
         .h(44);
-        background: green;
+        background: #A1C729;
         color:#fff;
         text-align: center;
         .l_h(44);

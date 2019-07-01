@@ -10,8 +10,8 @@
           </article>
         </div>
         <div class="top_1r">
-          <p>二维码</p>
-
+          <p><i class="iconfont icon-erweima"></i></p>
+        
           <h6>邀请码</h6>
         </div>
       </section>
@@ -39,19 +39,19 @@
         </div>
         <div class="middle_1cb">
           <div @click="jump1()">
-            <section>icon</section>
+            <section><i class="iconfont icon-daifukuan"></i></section>
             <p>待付款</p>
           </div>
           <div @click="jump2()">
-            <section>icon</section>
+            <section><i class="iconfont icon-yifukuan"></i></section>
             <p>已付款</p>
           </div>
           <div @click="jump3()">
-            <section>icon</section>
+            <section><i class="iconfont icon-daifahuo"></i></section>
             <p>待发货</p>
           </div>
           <div @click="jump4()">
-            <section>icon</section>
+            <section><i class="iconfont icon-daishouhuo"></i></section>
             <p>待收货</p>
           </div>
         </div>
@@ -62,19 +62,19 @@
       <h3>其他服务</h3>
       <div class="middle_2c">
         <div @click="go1()">
-          <section>icon</section>
+          <section><i class="iconfont icon-lvsefenkaicankaoxianban-"></i></section>
           <p>我的团长</p>
         </div>
         <div @click="go2()">
-          <section>icon</section>
+          <section><i class="iconfont icon-wodedangxuan"></i></section>
           <p>收货人</p>
         </div>
         <div @click="go3()">
-          <section>icon</section>
+          <section><i class="iconfont icon-iconset03100"></i></section>
           <p>申请团长</p>
         </div>
         <div @click="go4()">
-          <section>icon</section>
+          <section><i class="iconfont icon-qingchu"></i></section>
           <p>清除缓存</p>
         </div>
       </div>
@@ -137,6 +137,8 @@ export default {
 </script>
 
 <style lang='less'>
+@import "../../iconfont1111/iconfont.css";
+@import "../../iconfont/iconfont.css";
 @import "../common/style/index.less";
 .body {
   height: 100%;
@@ -146,17 +148,15 @@ export default {
   .w(375);
   .h(164);
   /* height:195px; */
-  background: #a1c729;
+  background: #A1C729;
 }
 .top_1 {
   .h(62);
-  background: red;
 }
 .top_1l {
   float: left;
   .w(300);
   .h(62);
-  background: brown;
 }
 .top_1l img {
   .w(60);
@@ -185,23 +185,30 @@ export default {
 }
 .top_1r {
   float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .top_1r p {
   .f_s(15);
   color: #fff;
 }
+.top_1r p i{
+  .f_s(38);
+}
 .top_1r h6 {
   .f_s(15);
   color: #fff;
-  .margin(16, 0, 0, 12);
+  line-height: 20px;
+  
   opacity: 0.8;
 }
 .top_2 {
   .w(375);
   .h(102);
-  background: pink;
   display: flex;
   align-items: center;
+  color: #fff;
 }
 .top_2 div {
   flex: 1;
@@ -209,11 +216,11 @@ export default {
   .h(80);
 }
 .top_2 div figure {
-  .f_s(30);
+  .f_s(20);
   text-align: center;
 }
 .top_2 div aside {
-  .f_s(20);
+  .f_s(16);
   text-align: center;
 }
 
@@ -253,7 +260,6 @@ export default {
 .middle_1cb {
   .w(355);
   .h(97);
-  background: green;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -261,14 +267,17 @@ export default {
 .middle_1cb div {
   .w(60);
   .h(80);
-  background: pink;
   text-align: center;
 }
 .middle_1cb section {
   .f_s(15);
+  color:#91BE21;
+}
+.middle_1cb section i{
+  .f_s(38);
 }
 .middle_1cb p {
-  .f_s(16);
+  .f_s(14);
 }
 /*其他服务*/
 .middle_2 {
@@ -287,13 +296,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: blueviolet;
 }
 .middle_2c section {
-  .f_s(15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   color:#91BE21;
+}
+.middle_2c section i{
+  .f_s(38);
 }
 .middle_2c p {
-  .f_s(16);
+  .f_s(14);
 }
 /*bottom*/
 .bottom {
@@ -303,6 +317,7 @@ export default {
 }
 .bottom p {
   .f_s(14);
+  color:#B4B4B4;
 }
 .bottom span{
   color:red;
