@@ -123,25 +123,6 @@ export default new Router({
         }
       ]
     },
-    {
-      path: '/search',
-      component: Search,
-      children: [
-        {
-          path: 'info/:id',
-          components: { Info }
-        },
-        {
-          path: '/',
-          redirect: 'info/0'
-        },
-        {
-          path: 'tosearch',
-          components: { Tosearch }
-        }
-      ]
-<<<<<<< HEAD
-      },
       {
         path:'/search',
         component:Search,
@@ -172,25 +153,5 @@ export default new Router({
       {
         path:'/createAddressee',
         component:CreateAddressee
-
-      
       }
-=======
-    },
-    /* 全部订单*/
-    {
-      path: '/orders',
-      component: Orders
-    },
-    {
-      path: '/coupon',
-      component: Coupon
-    },
-    {
-      path: '/createAddressee',
-      component: CreateAddressee
-
-    }
->>>>>>> 4cf85a2f84d7726bd2901c6ac8e044c85328ce9c
-  ]
 })
