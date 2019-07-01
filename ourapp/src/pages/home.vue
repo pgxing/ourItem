@@ -5,7 +5,6 @@
                 :class="index == num ? 'active' : ''"
                 v-for='(item,index) in info' 
                 :key='index' >
-
                {{item.title}}
                 
             </li>

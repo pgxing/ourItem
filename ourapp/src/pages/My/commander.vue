@@ -1,7 +1,7 @@
 <template>
     <div id="ddd">
        <nav>
-           <span @click="back()"><</span>
+           <span @click="back()">》</span>
            <span>申请团长</span>
        </nav>
     </div>
