@@ -1,7 +1,7 @@
 <template>
   <div id="body">
     <nav>
-      <span @click="back()"><</span>
+      <span @click="back()">《</span>
       <span>我的粉丝</span>
     </nav>
     <div class="list">

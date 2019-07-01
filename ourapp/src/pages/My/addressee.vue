@@ -1,12 +1,14 @@
 <template>
   <div id="ddd">
     <nav>
-      <span @click="back()"><</span>
+      <span @click="back()">《</span>
       <span>我的收货人</span>
     </nav>
-    <button @click="to()">新增收货人</button>
+    <button @click="to()">新增收货人&nbsp;<span>+</span></button>
     <ul class="list">
-      <li v-for="(item,index) in list " :key="index">
+      <li v-for="(item,index) in list " :key="index"
+        @click="select(index)"
+      >
         <div class="info">
           <p class="left">
             <span>{{item.user}}</span>
@@ -33,10 +35,14 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push({ path: "/my" });
+      this.$router.go(-1)
     },
     to() {
       this.$router.push({ path: "/createAddressee" });
+    },
+    select(index){
+      localStorage.select = index
+      this.$router.go(-1)
     }
   },
   mounted() {
@@ -48,7 +54,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import "../../common/style/index.less";
+@import "~style/index.less";
 #ddd {
   .w(375);
   .h(667);
@@ -65,32 +71,49 @@ export default {
   display: flex;
 }
 nav span:nth-child(1) {
-  .f_s(24);
+  .f_s(18);
   color: #fff;
 }
 nav span:nth-child(2) {
-  .f_s(20);
+  .f_s(18);
   color: #fff;
   font-weight: 600;
   margin: 0 auto;
 }
 #ddd button {
-  .w(100);
+  position: fixed;
+  bottom: 10px;
+  .w(355);
+  .margin(0,10,0,10);
   .h(36);
   border: 2px solid #b3cd73;
   background: #fff;
+  border-radius: 5px;
+  background: #99bc42;
+  color: #fff;
+  .f_s(18);
+  span{
+    .f_s(20)
+  }
 }
 .info {
   .f_s(16);
-  font-weight: 600;
   color: #b2b2b2;
-  border-bottom: 1px solid rgba(178, 178, 138, 0.2);
+ 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .info .left span {
   color: #000;
+  font-weight: 900;
+}
+.list{
+  .padding(10,10,0,10);
+  li{
+     border-bottom: 1px solid rgba(178, 178, 138, 0.2);
+     .padding(0,0,10,0)
+  }
 }
 </style>
 

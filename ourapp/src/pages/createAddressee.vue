@@ -1,7 +1,7 @@
 <template>
   <div id="ddd">
     <nav>
-      <span @click="back()"><</span>
+      <span @click="back()">《</span>
       <span>新增收货人</span>
     </nav>
     <form action>
@@ -63,7 +63,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.push({ path: "/my" });
+      this.$router.go(-1);
     },
     /* 获取input内的值并存入到数组中*/
     getInfo(){

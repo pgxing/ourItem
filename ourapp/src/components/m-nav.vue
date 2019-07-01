@@ -32,7 +32,6 @@ export default {
         justify-content: space-around;
         .w(375);
         li{
-            // .h(44);
             height: 44px;
             .l_h(44);
             color:#BBBBBB;

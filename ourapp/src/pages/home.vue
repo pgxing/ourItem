@@ -5,7 +5,6 @@
                 :class="index == num ? 'active' : ''"
                 v-for='(item,index) in info' 
                 :key='index' >
-
                {{item.title}}
                 
             </li>
@@ -49,9 +48,8 @@ export default {
             })
         },
         choose(index){
-            
             this.num = index;
-            this.$router.push({path: `/mid/${this.info[index].title}`, query: {id:index}})
+            this.$router.push({path: `/home/mid/${this.info[index].title}`, query: {id:index}})
         },
         initBS() {
             this.scroll = new BS(".line", { probeType: 3 });
@@ -103,7 +101,7 @@ export default {
         overflow:auto;
         .w(375);
         .h(50);
-        background:skyblue;
+        
         
         li{
             .w(80);
@@ -115,13 +113,11 @@ export default {
             text-align:center;
         }
         .sel{
-            color: yellow;
-            
-        }
-        
+            color: yellow; 
+        } 
     }
     .active{
-        .f_s(30);
+        .f_s(18)!important;
         color: #000;
         font-weight:bolder;
         background: #fff;

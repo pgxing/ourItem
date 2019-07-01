@@ -7,14 +7,21 @@
     <div class="content">
       <div class="box">
         <div class="userinfo">
-            <div class="user"><span>收货人：</span><span>》</span></div>
-            <div class="addess"><span>提货地址：</span><span>》</span></div>
+          <div class="user" @click="toadduser">
+            <span>收货人：</span>
+            {{usersInfo.user}}{{usersInfo.phone}}
+            <span>》</span>
+          </div>
+          <div class="addess">
+            <span>提货地址：</span>
+            {{usersInfo.address}}
+          </div>
         </div>
         <ul>
           <li class="foodinfo">商品信息</li>
           <li v-for="(item,index) in list" :key="index">
             <div class="img">
-              <img :src="item.src" alt>
+              <img :src="item.src" alt />
             </div>
             <div class="title">
               <h3>{{item.titie}}</h3>
@@ -27,10 +34,13 @@
           </li>
           <li class="topbom">
             <div class="top">
-                <span>商品金额</span>
-                <b>￥{{this.$route.query.allprice}}</b>
+              <span>商品金额</span>
+              <b>￥{{this.$route.query.allprice}}</b>
             </div>
-            <div class="bom">应付<b>￥{{this.$route.query.allprice}}</b></div>
+            <div class="bom">
+              应付
+              <b>￥{{this.$route.query.allprice}}</b>
+            </div>
           </li>
         </ul>
       </div>
@@ -46,7 +56,8 @@ import BS from "better-scroll";
 export default {
   data() {
     return {
-      list: []
+      list: [],
+      usersInfo: []
     };
   },
   methods: {
@@ -58,11 +69,27 @@ export default {
     },
     comprice(price, id) {
       return Math.floor(price.slice(1) * id * 100) / 100;
+    },
+    toadduser() {
+      this.$router.push("/my/addressee");
     }
   },
   mounted() {
-    this.list = this.$route.query.buylist;
-    console.log(this.list);
+    //从localStorage中获取收货人信息
+    if (localStorage.select && localStorage.users) {
+        let usersInfo = JSON.parse(localStorage.getItem("users"));
+        let index = localStorage.select;
+        this.usersInfo = usersInfo[index];
+    }
+    //从非购物车的其他路由跳到这个路由时，会重新挂载，但是接收不到传来的数据，会报错，所以在第一次挂载页面时，
+    //把传来的数据，先存进本地缓存，下次调用时，就判断是否传入了新的参数，如果没有，则调用缓存
+    if (this.$route.query.buylist[0].src) {
+      localStorage.setItem(
+        "buylist",
+        JSON.stringify(this.$route.query.buylist)
+      );
+    }
+    this.list = JSON.parse(localStorage.getItem("buylist"));
     this.initBS();
   }
 };
@@ -74,7 +101,6 @@ export default {
   top: 0;
   bottom: 0;
   z-index: 5;
-  background: skyblue;
   .w(375);
   header {
     .h(44);
@@ -109,24 +135,23 @@ export default {
         .w(351);
         background: #fff;
         .f_s(16);
-        .user{
-            display: flex;
-            justify-content: space-between;
-            .padding(10, 12, 10, 12);
-            .h(47);
-            .w(351);
-            background: skyblue;
-            .l_h(27);
+        .user {
+          display: flex;
+          justify-content: space-between;
+          .padding(10, 12, 10, 12);
+          .h(47);
+          .w(351);
+          .l_h(27);
         }
-        .addess{
-            display: flex;
-            justify-content: space-between;
-            .padding(10, 12, 10, 12);
-            .h(70);
-            .w(351);
-            .l_h(50);
-            border-top: 1px solid #f6f6f6;
-            background: yellow;
+        .addess {
+          display: flex;
+          justify-content: space-between;
+          .padding(10, 12, 10, 12);
+          .h(70);
+          .w(351);
+          .l_h(50);
+          border-top: 1px solid #f6f6f6;
+          text-align: left;
         }
       }
       ul {
@@ -183,8 +208,8 @@ export default {
           }
         }
         .topbom {
-            display: block;
-            padding: 0;
+          display: block;
+          padding: 0;
           .top {
             .h(46);
             .w(327);
@@ -194,8 +219,8 @@ export default {
             justify-content: space-between;
             background: #fff;
             .l_h(46);
-            b{
-                color: red;
+            b {
+              color: red;
             }
           }
           .bom {
@@ -204,8 +229,8 @@ export default {
             .l_h(48);
             text-align: right;
             .f_s(16);
-            b{
-                color: red;
+            b {
+              color: red;
             }
           }
         }

@@ -2,7 +2,7 @@
   <div class="body">
     <div class="top">
       <section class="top_1">
-        <div class="top_1l">
+        <div class="top_1l" @click="jumpInfor">
           <img src="../img/timg.jpg" alt>
           <article>
             <h4>jonathan</h4>
@@ -84,12 +84,20 @@
       <span>18108293702📞</span>
     </div>
     <router-view></router-view>
+    <router-view name="Information"></router-view>
+
   </div>
 </template>
 <script>
 import { MessageBox } from "mint-ui";
 export default {
   methods: {
+    jumpInfor(){
+      this.$router.push({path:'/My/information'})
+    },
+    jump1(){
+      this.$router.push({path:'/my/waitingPay'})
+      },
     to() {
       this.$router.push({ path: "/orders" });
     },
