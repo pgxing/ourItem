@@ -171,8 +171,6 @@ export default new Router({
       {
         path:'/createAddressee',
         component:CreateAddressee
-
-      
       }
   ]
 })
